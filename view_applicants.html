@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Applicants</title>
+</head>
+
+<body>
+
+<h2>Applicants</h2>
+
+<table border="1">
+
+<tr>
+<th>Application ID</th>
+<th>Student ID</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for app in applications %}
+
+<tr>
+<td>{{ app.id }}</td>
+<td>{{ app.student_id }}</td>
+<td>{{ app.status }}</td>
+
+<td>
+
+<a href="/update_status/{{ app.id }}/Shortlisted">Shortlist</a>
+
+<a href="/update_status/{{ app.id }}/Selected">Select</a>
+
+<a href="/update_status/{{ app.id }}/Rejected">Reject</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/company_dashboard">Back</a>
+
+</body>
+</html>

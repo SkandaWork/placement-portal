@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Company Dashboard</title>
+</head>
+
+<body>
+
+<h1>Company Dashboard</h1>
+
+<a href="/create_drive">Create Placement Drive</a>
+
+<h2>Your Placement Drives</h2>
+
+<table border="1">
+
+<tr>
+<th>ID</th>
+<th>Job Title</th>
+<th>Eligibility</th>
+<th>Deadline</th>
+<th>Applicants</th>
+</tr>
+
+{% for drive in drives %}
+<tr>
+<td>{{ drive.id }}</td>
+<td>{{ drive.job_title }}</td>
+<td>{{ drive.eligibility }}</td>
+<td>{{ drive.deadline }}</td>
+<td>
+<a href="/view_applicants/{{ drive.id }}">View Applicants</a>
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/">Logout</a>
+
+</body>
+</html>
